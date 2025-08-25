@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noticias Tarija y el Mundo</title>
+  <meta name="description" content="Medio digital con noticias de Tarija, Bolivia e internacionales. Fotos, videos y cobertura en tiempo real."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container flex between center-v">
+      <a href="./" class="logo">
+        <span class="logo-dot"></span>
+        <span class="logo-text">Noticias <b>Tarija</b> y el Mundo</span>
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menú" id="menuToggle" aria-expanded="false">☰</button>
+      <nav class="nav" id="nav">
+        <a href="#" data-filter="Todas" class="active">Inicio</a>
+        <a href="#" data-filter="Tarija">Tarija</a>
+        <a href="#" data-filter="Bolivia">Bolivia</a>
+        <a href="#" data-filter="Internacional">Internacional</a>
+        <a href="#" data-filter="Videos">Videos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Noticias de Tarija, Bolivia e Internacional</h1>
+      <p>Información verificada, fotos, videos y cobertura local.</p>
+      <div class="search-wrap">
+        <input id="searchInput" type="search" placeholder="Buscar noticias…" aria-label="Buscar noticias"/>
+      </div>
+    </div>
+  </section>
+
+  <main class="container grid">
+    <aside class="sidebar">
+      <div class="card">
+        <h3>Noticias más leídas</h3>
+        <ul id="popularList" class="list"></ul>
+      </div>
+      <div class="card">
+        <h3>Categorías</h3>
+        <ul class="tags">
+          <li><button class="tag" data-filter="Tarija">Tarija</button></li>
+          <li><button class="tag" data-filter="Bolivia">Bolivia</button></li>
+          <li><button class="tag" data-filter="Internacional">Internacional</button></li>
+          <li><button class="tag" data-filter="Videos">Videos</button></li>
+        </ul>
+      </div>
+      <div class="card" id="contacto">
+        <h3>Contacto</h3>
+        <p>Envíanos tus noticias, fotos o videos:</p>
+        <ul class="contact">
+          <li>📧 correo@tusitio.bo</li>
+          <li>📱 WhatsApp: +591 70000000</li>
+          <li>📍 Tarija, Bolivia</li>
+        </ul>
+      </div>
+    </aside>
+
+    <section class="content">
+      <div id="feed" class="cards"></div>
+      <button id="loadMore" class="load-more" hidden>Cargar más</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container flex between wrap">
+      <p>© <span id="year"></span> Noticias Tarija y el Mundo — Todos los derechos reservados.</p>
+      <div class="social">
+        <a target="_blank" rel="noopener" href="https://facebook.com/">Facebook</a>
+        <a target="_blank" rel="noopener" href="https://twitter.com/">X/Twitter</a>
+        <a target="_blank" rel="noopener" href="https://instagram.com/">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Noticia -->
+  <dialog id="postModal" class="modal">
+    <article class="modal-card">
+      <button class="close" id="modalClose" aria-label="Cerrar">✕</button>
+      <div id="modalMedia" class="modal-media"></div>
+      <div class="modal-body">
+        <h2 id="modalTitle"></h2>
+        <div class="meta"><span id="modalCategory" class="pill"></span> • <time id="modalDate"></time></div>
+        <p id="modalContent"></p>
+        <div class="share">
+          <span>Compartir:</span>
+          <a id="shareWhatsapp" target="_blank" rel="noopener">WhatsApp</a>
+          <a id="shareFacebook" target="_blank" rel="noopener">Facebook</a>
+          <a id="shareTwitter" target="_blank" rel="noopener">X/Twitter</a>
+        </div>
+      </div>
+    </article>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
