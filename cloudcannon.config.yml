@@ -2,6 +2,12 @@ _schema: _schema
 paths:
   uploads: uploads
   static: ''
+commit_templates:
+  - label:
+    template_string:
+    template_path:
+    _inputs:
+    extra_data:
 timezone: America/La_Paz
 markdown:
   engine: commonmark
